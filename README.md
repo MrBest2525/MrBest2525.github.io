@@ -3,4 +3,4 @@
 
 ヒントや改善点などありましたら、教えていただけるとありがたいです。
 
-[ページはこちら](https://mr-best-creator.github.io/)
+[ページはこちら](https://mrbest2525.github.io/)
