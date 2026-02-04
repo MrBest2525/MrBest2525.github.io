@@ -2,17 +2,17 @@
 <html lang="jp">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="./../style.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
     <title>Mr.Best (mr-best-creator)サイト ホーム</title>
   </head>
   <body>
-    <div id="nav-placeholder" class="menu"></div>
-    <script>
-      fetch("./../preset/nav.html")
-    .then(response => response.text())  // nav.html を取得
-    .then(data => {
-        const navPlaceholder = document.getElementById("nav-placeholder").innerHTML = data);
-    </script>
+
+    <nav id="nav"></nav>
+    <script src="/assets/js/default_nav_loader.js"></script>
+
+    <canvas id="canvas-back"></canvas>
+    <canvas id="canvas-front"></canvas>
+    
     <div class="main">
       <h1>現在作成中</h1>
       <p>今後操作性の改善作成したアプリ等の追加を行います！</p>
