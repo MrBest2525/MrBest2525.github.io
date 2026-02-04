@@ -1,44 +1,47 @@
 <!DOCTYPE html>
 <html lang="jp">
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="./../style.css">
-    <title>Mr.Best (mr-best-creator)サイト ホーム</title>
-  </head>
-  <body>
-    <div id="nav-placeholder" class="menu"></div>
-    <script>
-      fetch("./../preset/nav.html")
-    .then(response => response.text())  // nav.html を取得
-    .then(data => {
-        const navPlaceholder = document.getElementById("nav-placeholder");
-        navPlaceholder.innerHTML = data; // 取得したHTMLを挿入
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+        <title>Mr.Best (mr-best-creator)サイト ホーム</title>
+    </head>
 
-        requestAnimationFrame(() => {
-            const navElement = navPlaceholder.querySelector("nav");
-            if (navElement) {
-                navPlaceholder.style.height = navElement.offsetHeight + "px";
-            }
-        });
-    })
-    .catch(error => console.error("ナビゲーションの読み込みに失敗しました", error));
-    </script>
-    <h1>アプリやツール</h1>
-    <p>配布場所 <a href="https://github.com/Mr-Best-creator/Show-player-head-in-chat/releases" target="_blank" rel="noopener noreferrer">Show-player-head-in-chat (GitHub)</a></p>
-    <p>今までに作成、公開したアプリ、ツールを紹介します。</p>
-    <h2>Show-player-head-in-chat</h2>
-    <p>最初にリリースしたもの</p>
-    <p>Minecraftのチャット欄にプレイヤースキンの顔を表示するための外部ツール</p>
-    <p>依存関係(推奨バージョン)</p>
-    <ul>
-      <li><p>Python 3.12.4</p></li>
-      <li><p>Pillow 10.4.0</p></li>
-      <li><p>Minecraft 1.16 ~ ?</p><p>(/tellrawコマンドの仕様が変更されていなければ使えます。)</p></li>
-    </ul>
-    <p>変更のあるバージョンでなければ多少バージョンがあっていなくても動くと思います</p>
-    <p>↓このツールの紹介動画</p>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?si=rAgfzTxE_npWv0NP&amp;list=PLtC9IDXQwL8RQqZP94aovnWi9AnfknfYT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    <p>公式チャンネル <a href="https://youtube.com/channel/UCGBgS-GVxc3KceAgh12wkBA?feature=shared">そらちゃんのモノづくり工房</a></p>
-    <p>再生リスト「<a href="https://youtube.com/playlist?list=PLtC9IDXQwL8RQqZP94aovnWi9AnfknfYT&feature=shared">Show player head in chat</a>」</p>
-  </body>
+    <body>
+        
+        <nav id="nav"></nav>
+        <script src="/assets/js/default_nav_loader.js"></script>
+        
+        <canvas id="canvas-back"></canvas>
+        <canvas id="canvas-front"></canvas>
+
+        <div class="container">
+            <header>
+                <h1>アプリやツール</h1>
+                <p>今までに作成、公開したアプリ、ツールを紹介します。</p>
+            </header>
+
+            <main>
+                <section class="glass-block">
+                    <h2><a href="https://github.com/MrBest2525/Show-player-head-in-chat/releases" target="_blank" rel="noopener noreferrer">Show-player-head-in-chat</a></h2>
+                    <p>配布場所 <a href="https://github.com/MrBest2525/Show-player-head-in-chat/releases" target="_blank" rel="noopener noreferrer">Show-player-head-in-chat (GitHub)</a></p>
+                    <p>最初にリリースしたもの</p>
+                    <p>Minecraftのチャット欄にプレイヤースキンの顔を表示するための外部ツール</p>
+                    <p>依存関係(推奨バージョン)</p>
+                    <ul>
+                        <li><p>Python 3.12.4</p></li>
+                        <li><p>Pillow 10.4.0</p></li>
+                        <li><p>Minecraft 1.16 ~ ?</p><p>(/tellrawコマンドの仕様が変更されていなければ使えます。)</p></li>
+                    </ul>
+                    <p>変更のあるバージョンでなければ多少バージョンがあっていなくても動くと思います</p>
+                    <p>↓このツールの紹介動画</p>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?si=rAgfzTxE_npWv0NP&amp;list=PLtC9IDXQwL8RQqZP94aovnWi9AnfknfYT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <p>公式チャンネル <a href="https://youtube.com/channel/UCGBgS-GVxc3KceAgh12wkBA?feature=shared">そらちゃんのモノづくり工房</a></p>
+                    <p>再生リスト「<a href="https://youtube.com/playlist?list=PLtC9IDXQwL8RQqZP94aovnWi9AnfknfYT&feature=shared">Show player head in chat</a>」</p>
+                </section>
+            </main>
+        </div>
+        
+        <script src="/assets/js/default.js"></script>
+
+    </body>
 </html>

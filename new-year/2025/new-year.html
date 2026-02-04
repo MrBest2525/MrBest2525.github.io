@@ -6,23 +6,13 @@
     <title>happy new year! 2025!</title>
   </head>
   <body>
-    <div id="nav-placeholder" class="menu"></div>
-    <script>
-      fetch("./../../preset/nav.html")
-    .then(response => response.text())  // nav.html を取得
-    .then(data => {
-        const navPlaceholder = document.getElementById("nav-placeholder");
-        navPlaceholder.innerHTML = data; // 取得したHTMLを挿入
+    
+    <nav id="nav"></nav>
+    <script src="/assets/js/default_nav_loader.js"></script>
 
-        requestAnimationFrame(() => {
-            const navElement = navPlaceholder.querySelector("nav");
-            if (navElement) {
-                navPlaceholder.style.height = navElement.offsetHeight + "px";
-            }
-        });
-    })
-    .catch(error => console.error("ナビゲーションの読み込みに失敗しました", error));
-    </script>
+    <canvas id="canvas-back"></canvas>
+    <canvas id="canvas-front"></canvas>
+
     <h1>あけましておめでとうございます！</h1>
     <p>昨年は<a href="https://discord.gg/AHewjr7Gne" rel="noreferrer noopener" target="_blank">Discordサーバー</a>を立てたりし、たくさんの方に参加していただきました！いつもありがとうございます！</p>
     <p>今年も活動していく予定なのでよろしくお願いします！</p>

@@ -2,67 +2,50 @@
 <html lang="jp">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="./style.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
     <title>Mr.Best (mr-best-creator)サイト ホーム</title>
   </head>
   <body>
-    <div id="nav-placeholder" class="menu"></div>
-    <script>
-      fetch("./preset/nav.html")
-    .then(response => response.text())  // nav.html を取得
-    .then(data => {
-        const navPlaceholder = document.getElementById("nav-placeholder");
-        navPlaceholder.innerHTML = data; // 取得したHTMLを挿入
 
-        requestAnimationFrame(() => {
-            const navElement = navPlaceholder.querySelector("nav");
-            if (navElement) {
-                navPlaceholder.style.height = navElement.offsetHeight + "px";
-            }
-        });
-    })
-    .catch(error => console.error("ナビゲーションの読み込みに失敗しました", error));
-    </script>
-    <div class="main">
-      <h1>ホーム</h1>
-      <h2>現在作成中</h2>
-      <p>今後操作性の改善作成したアプリ等の追加を行います！</p>
-      <p>お楽しみに！</p>
-  
-      <button onclick="newYearPage()" class="homebutton" id="new_year">お正月！特設ページ！</button>
-      <script>
-        let date = new Date()
-        if ((date.getMonth()+1) == 1) {
-          document.getElementById('new_year').style.display = 'block';
-        }
-        else {
-          document.getElementById('new_year').style.display = 'none';
-        }
-        function newYearPage() {
-          let date = new Date()
-          if (date.getFullYear() == 2025) {
-            location.href = 'https://mr-best-creator.github.io/new-year/2025/new-year.html';
-          }
-          else {
-            alert("残念ながらアクセスできないようです...")
-          }
-        }
-      </script>
-      <div>
-        <h2>お知らせ</h2>
-        <div>
-          <p><a href="./apps/apps.html">apps</a>に新しいアプリを追加</p>
-          <ul>
-            <li><p>Show-player-head-in-chatを追加しました！</p></li>
-          </ul>
-        </div>
-        <div>
-          <p><a href="./sns/sns.html">SNS</a>を追加</p>
-          <ul>
-            <li><p>YouTubeチャンネルへのリンクを追加しました！</p></li>
-          </ul>
-        </div>
-      </div>
+    <nav id="nav"></nav>
+    <script src="/assets/js/default_nav_loader.js"></script>
+
+    <canvas id="canvas-back"></canvas>
+    <canvas id="canvas-front"></canvas>
+    
+    <div class="container">
+      <header>
+        <h1>ホーム</h1>
+        <h2>現在作成中</h2>
+        <p>今後操作性の改善作成したアプリ等の追加を行います！</p>
+        <p>お楽しみに！</p>
+      </header>
+      
+      </main>
+
+        <section class="glass-block">
+          <div>
+            <h3 style="margin-bottom: 20px; font-weight: 400;">お知らせ</h3>
+            <div>
+              <p><a href="/apps/apps.html">apps</a>に新しいアプリを追加</p>
+              <ul>
+                <li><p>Show-player-head-in-chatを追加しました！</p></li>
+              </ul>
+            </div>
+            <div>
+              <p><a href="/sns/sns.html">SNS</a>を追加</p>
+              <ul>
+                <li><p>YouTubeチャンネルへのリンクを追加しました！</p></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+      </main>
+
     </div>
+
+    <script src="/assets/js/default.js"></script>
+
   </body>
 </html>
