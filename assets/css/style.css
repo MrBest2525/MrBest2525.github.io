@@ -85,3 +85,14 @@ a:hover::after {
   box-shadow: 0 15px 45px rgba(0, 0, 0, 0.05);
   border-color: rgba(255, 255, 255, 0.5);
 }
+
+/* リスト全体の余白をリセットして左端を揃える */
+.glass-block ul {
+  padding-left: 20px; /* 点をどのくらい右に寄せるかの調整（お好みで15px〜20px） */
+  margin: 0;
+}
+
+/* 点と文字が改行されないようにする */
+.glass-block li {
+  list-style-position: outside; /* これで点が文字の左側に綺麗に並びます */
+}
